@@ -2,13 +2,15 @@
 
 library(dplyr)
 library(ggplot2)
-filename ="fig3" 
+filename ="fig3.pdf" 
 
 # Cleaning- make sure the exdata_data_NEI_data-1 folder is your current Working Directory
 NEI <- readRDS("summarySCC_PM25.rds") %>% tbl_df() %>% filter(.,fips == "24510") %>% 
   mutate(year=as.factor(year),type=as.factor(type)) %>% group_by(year,type)
 
 Total_Emissions <- summarise(NEI,Total=sum(Emissions))
+
+
 #plotting
 ggplot(data=Total_Emissions, aes(x=year, y=Total, fill=type)) +
 geom_bar(stat = "identity", color="black",position = position_dodge()) + 

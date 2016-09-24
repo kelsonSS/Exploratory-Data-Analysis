@@ -1,7 +1,7 @@
 ## This Script will read the data and create a barplot of the total amount of PM2.5 over time in Baltimore for vehicle sources 
 
 library(dplyr)
-filename= "fig5"
+filename= "fig5.pdf"
 
 # Cleaning- make sure the exdata_data_NEI_data-1 folder is your current Working Directory
 VehicleSources<-readRDS("Source_Classification_Code.rds")%>%tbl_df() %>%filter(grepl("Vehicle",EI.Sector))

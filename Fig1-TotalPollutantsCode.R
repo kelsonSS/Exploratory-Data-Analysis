@@ -2,7 +2,7 @@
 
 
 library(dplyr)
-filename= "fig1"
+filename= "fig1.pdf"
 
 #Cleaning- make sure the exdata_data_NEI_data-1 folder is your current Working Directory
 NEI <- readRDS("summarySCC_PM25.rds") %>% tbl_df() %>%  group_by(year) 

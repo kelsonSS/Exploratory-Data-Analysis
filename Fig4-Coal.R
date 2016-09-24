@@ -2,7 +2,7 @@
 
 library(dplyr)
 library(ggplot2)
-filename= "Fig4"
+filename= "Fig4.pdf"
 
 # Cleaning- make sure the exdata_data_NEI_data-1 folder is your current Working Directory
 CoalSources<-readRDS("Source_Classification_Code.rds")%>%tbl_df() %>%filter(grepl("[cC]oal",Short.Name))
